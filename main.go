@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"handlers"
+	"github.com/willyabimanyu/microservice-go/handlers"
 )
 
 func main() {
