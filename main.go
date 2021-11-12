@@ -7,16 +7,20 @@ import (
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/willyabimanyu/microservice-go/handlers"
 )
 
 func main() {
 	l := log.New(os.Stdout, "product-api ", log.LstdFlags)
 
+	hh := handlers.NewHello(l)
 	ph := handlers.newProducts(l)
 	// gh := handlers.NewHGoodbye(l)
 
 	sm := http.NewServeMux()
-	sm.Handle("/", ph)
+	sm.Handle("/", hh)
+	sm.Handle("/product", ph)
 
 	// http.HandleFunc()
 

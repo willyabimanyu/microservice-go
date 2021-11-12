@@ -14,7 +14,7 @@ type Product struct {
 }
 
 func GetProducts() []*Product {
-
+	return productList
 }
 
 var productList = []*Product{
